@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Sun, Moon, Menu, X } from 'lucide-react';
+import logo from "../assets/logo.png";
 
 export default function Header() {
   const [theme, setTheme] = useState('light');
@@ -48,7 +49,7 @@ export default function Header() {
       <Container>
         <Navbar.Brand href="index.html" className="d-flex align-items-center gap-2">
           <img 
-            src="../images/logo.png" 
+            src={logo}
             alt="LogiPrime Solutions Logo" 
             height="36" 
             className="logo-img d-inline-block align-top"
