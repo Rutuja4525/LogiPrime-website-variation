@@ -48,7 +48,7 @@ export default function Header() {
       <Container>
         <Navbar.Brand href="index.html" className="d-flex align-items-center gap-2">
           <img 
-            src="images/logo.png" 
+            src="../images/logo.png" 
             alt="LogiPrime Solutions Logo" 
             height="36" 
             className="logo-img d-inline-block align-top"
