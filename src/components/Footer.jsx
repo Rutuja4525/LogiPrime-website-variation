@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import logo from "../assets/logo.png";
 
 export default function Footer({ activeLayout }) {
   const getFooterStyle = () => {
@@ -81,7 +82,7 @@ export default function Footer({ activeLayout }) {
             <div className="footer-brand mb-4">
               <a href="index.html" className="d-flex align-items-center gap-2 mb-3" style={{ textDecoration: 'none' }}>
                 <img 
-                  src="images/logo.png" 
+                  src={logo} 
                   alt="LogiPrime Solutions Logo" 
                   height="32" 
                   style={{ filter: isDark ? 'brightness(1.2)' : 'none' }}
