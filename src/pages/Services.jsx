@@ -271,7 +271,7 @@ export default function Services() {
                       <span className="small text-uppercase tracking-wider fw-bold" style={{ color: layout === 'tech' ? '#f472b6' : layout === 'fintech' ? '#00f2fe' : layout === 'purple' ? '#7c3aed' : '#64748b' }}>System Interfaces</span>
                       <div style={{ color: layout === 'tech' ? '#f472b6' : layout === 'fintech' ? '#00f2fe' : layout === 'purple' ? '#7c3aed' : '#10b981' }}><Link size={24} /></div>
                     </div>
-                    <h3 className="h5 fw-bold mb-3" style={{ color: isDark ? '#ffffff' : '#1e1b4b', fontFamily: layout === 'minimalist' ? 'var(--font-serif)' : 'inherit', fontSize: '0.98rem' }}>Building Custom Interfaces</h3>
+                    <h3 className="h5 fw-bold mb-3" style={{ color: isDark ? '#ffffff' : '#1e1b4b', fontFamily: layout === 'minimalist' ? 'var(--font-serif)' : 'inherit' }}>Building Custom Interfaces</h3>
                     <p className="small mb-4" style={{ color: isDark ? '#94a3b8' : '#4a5568', lineHeight: '1.6' }}>Integrations and interfaces linking Yardi Voyager with external corporate applications to remove manual data duplication.</p>
                     
                     <ul className="list-unstyled mb-4 d-flex flex-column gap-2 p-0" style={{ fontSize: '0.85rem' }}>

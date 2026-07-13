@@ -266,7 +266,7 @@ export default function LayoutCorporate() {
                 <Card.Body className="d-flex flex-column justify-content-between">
                   <div>
                     <div className="p-3 text-primary d-inline-block rounded-circle bg-light mb-3"><Link size={24} /></div>
-                    <h4 className="h5 fw-bold mb-3 text-dark" style={{ fontSize: '0.98rem' }}>Building Custom Interfaces</h4>
+                    <h4 className="h5 fw-bold mb-3 text-dark">Building Custom Interfaces</h4>
                     <p className="text-muted small" style={{ lineHeight: '1.6' }}>Seamless integration between Yardi Voyager and third-party systems like SAP Concur. We eliminate duplicate entries by automating corporate expense reconciliations, CRM syncing, and utility billing.</p>
                   </div>
                   <a href="contact.html?product=yardi-interfaces" className="btn btn-link text-decoration-none fw-bold mt-3 d-flex align-items-center justify-content-center gap-1 small" style={{ color: '#0f294a' }}>
@@ -296,14 +296,14 @@ export default function LayoutCorporate() {
       </section>
 
       {/* CTA Section */}
-      <section id="call-to-action" className="py-6" style={{ background: '#0a192f', color: '#ffffff', padding: '80px 0' }}>
+      <section id="call-to-action" className="py-6" style={{ background: '#ffffff', color: '#0f294a', padding: '80px 0', borderTop: '1px solid #e2e8f0' }}>
         <Container>
-          <div className="p-5 text-center" style={{ backgroundColor: '#0f294a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '8px' }}>
-            <h2 className="display-6 fw-bold mb-3">Ready to Secure &amp; Automate Your Payments?</h2>
-            <p className="lead mb-4 text-white-50 mx-auto" style={{ maxWidth: '700px', fontSize: '1.05rem' }}>
+          <div className="p-5 text-center bg-light border" style={{ borderRadius: '16px', borderColor: '#e2e8f0' }}>
+            <h2 className="display-6 fw-bold mb-3" style={{ color: '#0f294a' }}>Ready to Secure &amp; Automate Your Payments?</h2>
+            <p className="lead mb-4 text-muted mx-auto" style={{ maxWidth: '700px', fontSize: '1.05rem' }}>
               Talk to our integration experts. Schedule a live product demo in our Yardi sandbox environment to see our automated validation in action.
             </p>
-            <Button href="contact.html" size="lg" style={{ backgroundColor: '#0284c7', borderColor: '#0284c7', borderRadius: '4px', padding: '12px 30px' }}>
+            <Button href="contact.html" size="lg" style={{ backgroundColor: '#0284c7', borderColor: '#0284c7', borderRadius: '4px', padding: '12px 30px', color: '#ffffff' }}>
               Book a Consultation
             </Button>
           </div>

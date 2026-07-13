@@ -73,6 +73,7 @@ export default function Header() {
           <Nav className="mx-auto text-center my-3 my-lg-0">
             <Nav.Link href="index.html" className={getNavLinkClass('index.html')}>Home</Nav.Link>
             <Nav.Link href="services.html" className={getNavLinkClass('services.html')}>Services</Nav.Link>
+            <Nav.Link href="solutions.html" className={getNavLinkClass('solutions.html')}>Solutions</Nav.Link>
             <Nav.Link href="about.html" className={getNavLinkClass('about.html')}>About Us</Nav.Link>
             <Nav.Link href="contact.html" className={getNavLinkClass('contact.html')}>Contact Us</Nav.Link>
           </Nav>
