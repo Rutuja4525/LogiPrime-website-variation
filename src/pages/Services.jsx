@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { Shield, Zap, Users, Database, Link, Activity, ChevronRight, Check } from 'lucide-react';
+import { Users, Database, Link, Activity, ChevronRight, Check } from 'lucide-react';
 
 export default function Services() {
   const layout = 'corporate';
@@ -134,70 +134,6 @@ export default function Services() {
         <section className="py-5" style={{ backgroundColor: layout === 'purple' ? '#faf9ff' : isDark ? '#0b0d19' : '#ffffff', color: isDark ? '#f1f5f9' : '#1e293b' }}>
           <Container className="py-4">
             <Row className="g-4">
-              
-              {/* Service 1: Wire Validation */}
-              <Col md={6} lg={4} id="detail-wire-validation">
-                <Card style={getCardStyle()} className="p-4 d-flex flex-column justify-content-between">
-                  <div>
-                    <div className="d-flex justify-content-between align-items-center mb-3">
-                      <span className="small text-uppercase tracking-wider fw-bold" style={{ color: layout === 'tech' ? '#f472b6' : layout === 'fintech' ? '#00f2fe' : layout === 'purple' ? '#7c3aed' : '#64748b' }}>Fraud Prevention</span>
-                      <div style={{ color: layout === 'tech' ? '#f472b6' : layout === 'fintech' ? '#00f2fe' : layout === 'purple' ? '#7c3aed' : '#0284c7' }}><Shield size={24} /></div>
-                    </div>
-                    <h3 className="h5 fw-bold mb-3" style={{ color: isDark ? '#ffffff' : '#1e1b4b', fontFamily: layout === 'minimalist' ? 'var(--font-serif)' : 'inherit' }}>AVS Wire Validation</h3>
-                    <p className="small mb-4" style={{ color: isDark ? '#94a3b8' : '#4a5568', lineHeight: '1.6' }}>Direct account ownership validation queried in real time via J.P. Morgan Chase's Account Validation Service (AVS) to prevent AP fraud.</p>
-                    
-                    <ul className="list-unstyled mb-4 d-flex flex-column gap-2 p-0" style={{ fontSize: '0.85rem' }}>
-                      <li className="d-flex align-items-start gap-2" style={{ color: isDark ? '#cbd5e1' : '#4a5568' }}>
-                        <span className="text-success mt-0.5"><Check size={14} /></span>
-                        <span>Natively integrates inside Yardi vendor workflows</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2" style={{ color: isDark ? '#cbd5e1' : '#4a5568' }}>
-                        <span className="text-success mt-0.5"><Check size={14} /></span>
-                        <span>Automated validation under 15 minutes</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2" style={{ color: isDark ? '#cbd5e1' : '#4a5568' }}>
-                        <span className="text-success mt-0.5"><Check size={14} /></span>
-                        <span>Reduces compliance and treasury risk profiles</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <Button href="contact.html?product=wire-validation" variant={getButtonVariant()} style={getButtonStyle()} className={layout === 'minimalist' ? 'rounded-0' : ''}>
-                    Get Started
-                  </Button>
-                </Card>
-              </Col>
-
-              {/* Service 2: Host to Host */}
-              <Col md={6} lg={4} id="detail-h2h">
-                <Card style={getCardStyle()} className="p-4 d-flex flex-column justify-content-between">
-                  <div>
-                    <div className="d-flex justify-content-between align-items-center mb-3">
-                      <span className="small text-uppercase tracking-wider fw-bold" style={{ color: layout === 'tech' ? '#f472b6' : layout === 'fintech' ? '#00f2fe' : layout === 'purple' ? '#7c3aed' : '#64748b' }}>Treasury Automation</span>
-                      <div style={{ color: layout === 'tech' ? '#f472b6' : layout === 'fintech' ? '#00f2fe' : layout === 'purple' ? '#7c3aed' : '#d97706' }}><Zap size={24} /></div>
-                    </div>
-                    <h3 className="h5 fw-bold mb-3" style={{ color: isDark ? '#ffffff' : '#1e1b4b', fontFamily: layout === 'minimalist' ? 'var(--font-serif)' : 'inherit' }}>Host-to-Host Payments</h3>
-                    <p className="small mb-4" style={{ color: isDark ? '#94a3b8' : '#4a5568', lineHeight: '1.6' }}>Direct ISO 20022 payments (pain.001/pain.002 status files) connecting Yardi Core directly to J.P. Morgan Chase pay source.</p>
-                    
-                    <ul className="list-unstyled mb-4 d-flex flex-column gap-2 p-0" style={{ fontSize: '0.85rem' }}>
-                      <li className="d-flex align-items-start gap-2" style={{ color: isDark ? '#cbd5e1' : '#4a5568' }}>
-                        <span className="text-success mt-0.5"><Check size={14} /></span>
-                        <span>No middleware, transaction, or portal fees</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2" style={{ color: isDark ? '#cbd5e1' : '#4a5568' }}>
-                        <span className="text-success mt-0.5"><Check size={14} /></span>
-                        <span>PGP-encrypted, direct SFTP connection</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2" style={{ color: isDark ? '#cbd5e1' : '#4a5568' }}>
-                        <span className="text-success mt-0.5"><Check size={14} /></span>
-                        <span>Automates ACH, domestic wires, and checks</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <Button href="contact.html?product=h2h-payments" variant={getButtonVariant()} style={getButtonStyle()} className={layout === 'minimalist' ? 'rounded-0' : ''}>
-                    Get Started
-                  </Button>
-                </Card>
-              </Col>
 
               {/* Service 3: Yardi Consulting */}
               <Col md={6} lg={4} id="detail-consulting">
