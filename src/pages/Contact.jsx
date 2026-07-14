@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import { User, Phone, Mail, MapPin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const layout = 'corporate';
@@ -19,6 +20,7 @@ export default function Contact() {
   const [product, setProduct] = useState('');
   const [message, setMessage] = useState('');
   const [formStatus, setFormStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     document.body.className = `layout-corporate`;
@@ -54,32 +56,62 @@ export default function Contact() {
       }
     };
 
-    const mailtoSubject = `Consultation Request - ${getProductLabel(product)}`;
-    const mailtoBody = `Name: ${name}
-Email: ${email}
-Company: ${company}
-Phone: ${phone || 'N/A'}
-Product/Service Interest: ${getProductLabel(product)}
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-Message/Consultation Details:
-${message}`;
+    const isUnconfigured = !serviceId || !templateId || !publicKey || 
+      serviceId === 'your_service_id' || 
+      templateId === 'your_template_id' || 
+      publicKey === 'your_public_key';
 
-    const mailtoLink = `mailto:avinash@logiprime.net?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
-    window.location.href = mailtoLink;
+    if (isUnconfigured) {
+      console.warn('EmailJS environment variables are missing or unconfigured. Please configure them in your .env file.');
+      setFormStatus({
+        type: 'warning',
+        message: 'EmailJS is not fully configured. Please define VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY in your .env file to enable form submissions.'
+      });
+      return;
+    }
 
-    // Success simulation
-    setFormStatus({
-      type: 'success',
-      message: 'Thank you! Your email client has been opened to send your request to avinash@logiprime.net. If the window did not open, you can email us directly.'
-    });
+    setIsSubmitting(true);
+    setFormStatus({ type: '', message: '' });
 
-    // Clear form fields
-    setName('');
-    setEmail('');
-    setCompany('');
-    setPhone('');
-    setProduct('');
-    setMessage('');
+    const templateParams = {
+      name: name,
+      email: email,
+      company: company,
+      phone: phone || 'N/A',
+      service: getProductLabel(product),
+      message: message,
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, {
+      publicKey: publicKey,
+    })
+      .then((response) => {
+        setFormStatus({
+          type: 'success',
+          message: 'Thank you! Your consultation request has been successfully sent. We will get back to you shortly.'
+        });
+        // Clear form fields
+        setName('');
+        setEmail('');
+        setCompany('');
+        setPhone('');
+        setProduct('');
+        setMessage('');
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        setFormStatus({
+          type: 'danger',
+          message: `Failed to send request: ${error.text || error.message || 'Unknown error'}. Please try again later or email us directly at avinash@logiprime.net.`
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   const isDark = false;
@@ -369,6 +401,7 @@ ${message}`;
 
                     <Button 
                       type="submit" 
+                      disabled={isSubmitting}
                       className={`w-100 py-3 ${layout === 'minimalist' ? 'rounded-0' : ''}`}
                       style={{ 
                         backgroundColor: layout === 'tech' ? '#7000ff' : layout === 'minimalist' ? '#1c1c1c' : layout === 'fintech' ? '#00f2fe' : layout === 'purple' ? '#7c3aed' : '#0f294a', 
@@ -378,7 +411,7 @@ ${message}`;
                         fontSize: '0.95rem'
                       }}
                     >
-                      Request Consultation
+                      {isSubmitting ? 'Sending Request...' : 'Request Consultation'}
                     </Button>
                   </Form>
                 </div>
