@@ -41,10 +41,36 @@ export default function Contact() {
       return;
     }
 
+    const getProductLabel = (key) => {
+      switch (key) {
+        case 'wire-validation': return 'Automated Vendor Wire Validation (J.P. Morgan AVS)';
+        case 'h2h-payments': return 'Yardi to J.P. Morgan Host-to-Host Payments';
+        case 'yardi-consulting': return 'Yardi Consulting & Custom Reporting';
+        case 'yardi-interfaces': return 'Custom Interfaces (e.g., Concur integration)';
+        case 'yardi-support': return 'Regular Yardi Support & Maintenance';
+        case 'both': return 'Multiple Solutions';
+        case 'other': return 'General Inquiry';
+        default: return key;
+      }
+    };
+
+    const mailtoSubject = `Consultation Request - ${getProductLabel(product)}`;
+    const mailtoBody = `Name: ${name}
+Email: ${email}
+Company: ${company}
+Phone: ${phone || 'N/A'}
+Product/Service Interest: ${getProductLabel(product)}
+
+Message/Consultation Details:
+${message}`;
+
+    const mailtoLink = `mailto:avinash@logiprime.net?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
+    window.location.href = mailtoLink;
+
     // Success simulation
     setFormStatus({
       type: 'success',
-      message: 'Thank you! Your request has been submitted successfully. One of our Yardi integration architects will get back to you shortly.'
+      message: 'Thank you! Your email client has been opened to send your request to avinash@logiprime.net. If the window did not open, you can email us directly.'
     });
 
     // Clear form fields
