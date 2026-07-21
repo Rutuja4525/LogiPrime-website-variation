@@ -285,12 +285,12 @@ export default function Solutions() {
                     <p className="saas-testimonial-quote mb-4 text-dark" style={{ fontStyle: 'italic' }}>
                       "LogiPrime Solutions has been an outstanding technology partner. Their expertise in Yardi consulting and payment automation helped streamline our operations and improve efficiency."
                     </p>
-                    <div className="saas-testimonial-author">
+                    {/* <div className="saas-testimonial-author">
                       [Client Name Placeholder]
                     </div>
                     <div className="saas-testimonial-meta">
                       [Designation / Job Title] &bull; [Company Name Placeholder]
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
               </Col>
