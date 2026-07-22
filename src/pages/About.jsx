@@ -130,7 +130,7 @@ export default function About() {
                     </li>
                     <li className="d-flex align-items-start gap-3">
                       <span style={{ color: layout === 'tech' ? '#f472b6' : layout === 'minimalist' ? '#2a4b3d' : layout === 'fintech' ? '#39ff14' : layout === 'purple' ? '#a78bfa' : '#0284c7' }}>✓</span>
-                      <span><strong>Infrastructure-Light:</strong> Runs natively inside Yardi using standard Python tasks. Nothing new to procure or host.</span>
+                      <span><strong>Infrastructure-Light:</strong> Runs natively inside Yardi using standard PowerShell tasks. Nothing new to procure or host.</span>
                     </li>
                     <li className="d-flex align-items-start gap-3">
                       <span style={{ color: layout === 'tech' ? '#f472b6' : layout === 'minimalist' ? '#2a4b3d' : layout === 'fintech' ? '#39ff14' : layout === 'purple' ? '#a78bfa' : '#0284c7' }}>✓</span>
